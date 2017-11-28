@@ -31,7 +31,8 @@ let data = [{ name: '精白', hex: '#ffffff' },
   { name: '茶白', hex: '#f3f9f1' },
   { name: '鸭卵青', hex: '#e0eee8' },
   { name: '素', hex: '#e0f0e9' },
-  { name: '青白', hex: '#c0ebd7' }]
+  { name: '青白', hex: '#c0ebd7' },
+  { name: '蟹壳青', hex: '#bbcdc5' }]
 
 export default {
   data () {
