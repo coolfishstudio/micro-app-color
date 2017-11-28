@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "node"
+branches:
+  only: master
+script:
+  - npm run build
+after_script:
+  - cd dist
+  - git init
+  - git config user.name "coolfishstudio"
+  - git config user.email "461836324@qq.com"
+  - git add .
+  - git commit -m "Travis build"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/coolfishstudio/cfs-color.git" master:gh-pages
