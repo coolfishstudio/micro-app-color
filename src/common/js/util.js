@@ -4,7 +4,7 @@
  *  return true 深色
  **/
 export function colorDepthByRgb (color) {
-  const rgb = color.replace(/(?:||rgb|RGB)*/g, '').split(',')
+  const rgb = color.replace(/\(?(:||rgb|RGB)*\)?/g, '').split(',')
   const r = parseInt(rgb[0])
   const g = parseInt(rgb[1])
   const b = parseInt(rgb[2])
