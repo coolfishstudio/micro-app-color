@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { copy } from 'common/js/util'
+import { copy, device } from 'common/js/util'
 export default {
   data () {
     return {
@@ -20,13 +20,15 @@ export default {
   methods: {
     changeColor (index) {
       this.$emit('click', index)
-      copy(this.data.hex, () => {
-        this.copied = true
-        console.log('复制成功')
-        setTimeout(() => {
-          this.copied = false
-        }, 1000)
-      })
+      if (device.isPC()) {
+        copy(this.data.hex, () => {
+          this.copied = true
+          console.log('复制成功')
+          setTimeout(() => {
+            this.copied = false
+          }, 1000)
+        })
+      }
     }
   }
 }
