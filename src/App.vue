@@ -8,11 +8,8 @@
             <div class="app-main-items-head-title">中国传统色彩标准色卡</div>
           </div>
           <div class="app-main-items-body">
-            <div v-for="(item, index) in list" :key="index" class="app-main-items-card" @click="changeColor(index)">
-              <div class="app-main-item" :style="'background-color: ' + item.hex + ';color: ' + (item.isDepth ? '#fff' : '#000')">
-                <p>{{ item.name }}</p>
-                <p>{{ item.hex }}</p>
-              </div>
+            <div v-for="(item, index) in list" :key="index" class="app-main-items-card">
+              <cfs-card :data="item" :index="index" @click="changeColor"></cfs-card>
             </div>
           </div>
         </div>
@@ -23,18 +20,21 @@
 
 <script>
 import CfsHeader from 'components/header/header'
+import CfsCard from 'components/card/card'
 
 import { colorDepthByRgb, hex2Rgb } from 'common/js/util'
 import listData from 'common/js/data'
 
 export default {
   components: {
-    CfsHeader
+    CfsHeader,
+    CfsCard
   },
   data () {
     return {
       list: listData || [],
-      currData: null
+      currData: null,
+      copied: false
     }
   },
   created () {
@@ -85,26 +85,16 @@ export default {
           color: $color-main-title
           font-weight: 500
       .app-main-items-body
-        padding: 0
+        padding: 2px
         margin-right: -1px
-        margin-bottom: -1px
         &:after
           content: ''
           display: block
           clear: both
         .app-main-items-card
-          width: 25%
+          width: 33.33%
           float: left
           position: relative
           z-index: 1
           cursor: pointer
-          .app-main-item
-            padding: 5px 0 5px 10px
-            color: #fff
-            border: 1px solid $color-main-border
-            border-top: 0
-            border-left: 0
-            border-bottom-right-radius: 10px
-            p
-              padding: 5px 0
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="app-header" :style="'background-color: ' + data.hex">
+  <header class="app-header" :style="'color: ' + data.hex">
     <h1 class="app-header-title" :style="'color: ' + (data.isDepth ? '#fff' : '#000')">传统色彩{{ data.name ? ('-' + data.name) : '' }}</h1>
     <span class="app-header-title-hex" :style="'color: ' + (data.isDepth ? '#fff' : '#000')">{{ data.hex }}</span>
     <span class="app-header-title-rgb" :style="'color: ' + (data.isDepth ? '#fff' : '#000')">{{ data.rgb }}</span>
@@ -22,7 +22,6 @@ export default {
   top: 0
   left: 0
   z-index: 10
-  color: #e9f1f6
   height: 64px
   background-color: currentColor
   box-shadow: 0 1px 1px 0 currentColor, 0 2px 1px -2px currentColor, 0 1px 3px 0 currentColor
@@ -35,6 +34,7 @@ export default {
     z-index: 1
     user-select: none
     margin-left: 20px
+    font-weight: bold
   span
     position: absolute
     right: 20px

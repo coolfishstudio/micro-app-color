@@ -56,3 +56,24 @@ export function rgb2Cmyk (color) {
 
   return [computedC, computedM, computedY, computedK]
 }
+/**
+  * 复制
+  */
+export function copy (value, callback) {
+  let copyTextArea = null
+  try {
+    copyTextArea = document.createElement('textarea')
+    copyTextArea.style.height = '0px'
+    copyTextArea.style.width = '0px'
+    copyTextArea.style.opacity = '0'
+    document.body.appendChild(copyTextArea)
+    copyTextArea.value = value
+    copyTextArea.select()
+    document.execCommand('copy')
+    callback && callback()
+  } finally {
+    if (copyTextArea && copyTextArea.parentNode) {
+      copyTextArea.parentNode.removeChild(copyTextArea)
+    }
+  }
+}
