@@ -1,5 +1,5 @@
 <template>
-  <div class="app-main-item" :style="'background-color: ' + data.hex + ';border-color: ' + data.hex + ';color: ' + (data.isDepth ? '#fff' : '#000')" :class="{'copied': copied}" @click="changeColor(index)">
+  <div class="app-main-item" :style="'background-color: ' + data.hex + ';border-color: ' + data.hex + ';color: ' + (data.isDepth ? '#fff' : '#000')" :class="{'copied': copied}" @click="changeColor(type, index)">
     <p class="app-main-item-name">【{{ data.name }}】</p>
     <p>{{ data.hex }}</p>
   </div>
@@ -15,11 +15,12 @@ export default {
   },
   props: {
     data: null,
-    index: 0
+    index: 0,
+    type: 0
   },
   methods: {
-    changeColor (index) {
-      this.$emit('click', index)
+    changeColor (type, index) {
+      this.$emit('click', type, index)
       if (device.isPC()) {
         copy(this.data.hex, () => {
           this.copied = true

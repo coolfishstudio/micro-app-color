@@ -3,13 +3,13 @@
     <cfs-header :data="currData"></cfs-header>
     <section class="list-container">
       <div class="app-main">
-        <div class="app-main-items">
+        <div class="app-main-items" v-for="(items, type) in data" :key="type">
           <div class="app-main-items-head">
-            <div class="app-main-items-head-title">中国传统色彩标准色卡</div>
+            <div class="app-main-items-head-title">{{ items.title }}</div>
           </div>
           <div class="app-main-items-body">
-            <div v-for="(item, index) in list" :key="index" class="app-main-items-card">
-              <cfs-card :data="item" :index="index" @click="changeColor"></cfs-card>
+            <div v-for="(item, index) in items.list" :key="index" class="app-main-items-card">
+              <cfs-card :data="item" :index="index" :type="type" @click="changeColor"></cfs-card>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      list: listData || [],
+      data: listData || [],
       currData: null,
       copied: false
     }
@@ -42,17 +42,21 @@ export default {
   },
   methods: {
     _initData () {
-      let data = this.list
-      data.map(item => {
-        item.rgb = hex2Rgb(item.hex)
-        item.isDepth = colorDepthByRgb(item.rgb)
-        return item
+      let _data = this.data
+      _data.map(_items => {
+        _items.list.map(_item => {
+          _item.rgb = hex2Rgb(_item.hex)
+          _item.isDepth = colorDepthByRgb(_item.rgb)
+          return _item
+        })
+        return _items
       })
-      this.currData = data[Math.floor((Math.random() * data.length))]
-      this.list = data
+      let _currList = _data[Math.floor((Math.random() * _data.length))].list || []
+      this.currData = _currList[Math.floor((Math.random() * _currList.length))]
+      this.data = _data
     },
-    changeColor (index) {
-      this.currData = this.list[index]
+    changeColor (type, index) {
+      this.currData = this.data[type].list[index]
     }
   }
 }
@@ -68,13 +72,13 @@ export default {
   .app-main
     width: 100%
     max-width: 800px
-    margin: 24px auto
+    margin: 30px auto
     .app-main-items
       background-color: #fff
       border-radius: 2px
       font-size: 12px
       border: 1px solid $color-main-border
-      margin: 0 15px
+      margin: 0 15px 30px 15px
       .app-main-items-head
         height: 48px
         line-height: 48px
