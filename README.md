@@ -1,21 +1,12 @@
 # cfs-color
 
-> A Vue.js project
+> 中国传统色色谱
 
-## Build Setup
+![icon](https://raw.githubusercontent.com/coolfishstudio/cfs-color/master/static/favicon%40128.ico)
 
-``` bash
-# install dependencies
-npm install
+本项目主要是为了实践 [https://travis-ci.org/](https://travis-ci.org/)
+利用Vue.js对[中国色](http://zhongguose.com/)进行一个仿制在线色谱
 
-# serve with hot reload at localhost:8080
-npm run dev
+[项目演示地址](https://coolfishstudio.github.io/cfs-color/)
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+增加点击色块自动复制hex值功能
