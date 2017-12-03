@@ -15,12 +15,14 @@
         </div>
       </div>
     </section>
+    <cfs-footer></cfs-footer>
   </div>
 </template>
 
 <script>
 import CfsHeader from 'components/header/header'
 import CfsCard from 'components/card/card'
+import CfsFooter from 'components/footer/footer'
 
 import { colorDepthByRgb, hex2Rgb } from 'common/js/util'
 import listData from 'common/js/data'
@@ -28,7 +30,8 @@ import listData from 'common/js/data'
 export default {
   components: {
     CfsHeader,
-    CfsCard
+    CfsCard,
+    CfsFooter
   },
   data () {
     return {
