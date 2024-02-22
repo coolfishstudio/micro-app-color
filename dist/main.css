@@ -35,8 +35,8 @@ a {
 }
 @font-face {
   font-family: 'lixunkejingdianxingshu';
-  src: url(./6d53ab23c6356c9be1e8.eot);
-  src: url(./6d53ab23c6356c9be1e8.eot?#font-spider) format('embedded-opentype'), url(./13381b310769005b2742.woff2) format('woff2');
+  src: url(/micro-app-color/6d53ab23c6356c9be1e8.eot);
+  src: url(/micro-app-color/6d53ab23c6356c9be1e8.eot?#font-spider) format('embedded-opentype'), url(/micro-app-color/13381b310769005b2742.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
 }
