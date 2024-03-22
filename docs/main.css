@@ -49,6 +49,14 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  background-color: var(--system-theme-background-color, #fff);
+}
+.textColor-T1M5AI {
+  color: var(--system-text-color, rgba(0, 0, 0, 0.85));
+}
+.avatarColor-h3c4JR {
+  color: #fff;
+  background-color: var(--system-theme-color, rgba(0, 0, 0, 0.25));
 }
 
 .layout-wCtV44 {
@@ -60,15 +68,15 @@ a {
 }
 .layout-wCtV44.reverse-UaC2Or .miniContainer-SeQiVP {
   border: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid var(--system-theme-border-color, rgba(0, 0, 0, 0.08));
 }
 .layout-wCtV44 .miniContainer-SeQiVP {
   width: 320px;
   flex-shrink: 0;
   height: 100%;
   border: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  background-color: #f8f8f8;
+  border-left: 1px solid var(--system-theme-border-color, rgba(0, 0, 0, 0.08));
+  background-image: var(--system-theme-background-linear, linear-gradient(180deg, rgba(246, 247, 249, 0.5), rgba(246, 247, 249, 0) 48.32%));
   display: flex;
   flex-direction: column;
 }
@@ -86,25 +94,27 @@ a {
 
 .logoView-U0latl {
   padding: 32px 0 8px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 .logoView-U0latl .iconContainer-ygsL_H {
   text-align: center;
 }
 .logoView-U0latl .titleContainer-_CLiOF {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
-  color: rgba(0, 0, 0, 0.85);
+  color: var(--system-text-color, #000000);
+  opacity: 0.85;
   font-weight: 400;
+}
+.logoView-U0latl .titleContainer-_CLiOF + .subTitleContainer-xQrjJI {
+  margin-top: 4px;
 }
 .logoView-U0latl .subTitleContainer-xQrjJI {
   text-align: center;
   font-size: 14px;
   line-height: 20px;
-  color: rgba(0, 0, 0, 0.85);
+  color: var(--system-text-color, #000000);
+  opacity: 0.85;
   font-weight: 300;
 }
 
@@ -196,7 +206,7 @@ a {
 }
 .container-aGjM6v .header-XfqF5U {
   height: 60px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--system-theme-border-color, rgba(0, 0, 0, 0.08));
   padding: 0 16px;
   display: flex;
   justify-content: center;
@@ -259,7 +269,8 @@ a {
 
 .copyright-_5zZL8 {
   font-size: 12px;
-  color: #bbb;
+  color: var(--system-text-color, #2c3437);
+  opacity: 0.45;
   line-height: 16px;
   text-align: center;
   padding: 8px 0;
